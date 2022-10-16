@@ -1,6 +1,7 @@
 .sideBar-container {
   flex: 3;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .sidebar-wrapper {

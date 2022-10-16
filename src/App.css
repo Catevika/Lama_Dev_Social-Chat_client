@@ -27,7 +27,8 @@
 }
 
 html {
-  overflow-y: auto;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   color: var(--gray);
   background-color: var(--ultra-dark);
