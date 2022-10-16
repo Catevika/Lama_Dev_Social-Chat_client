@@ -1,0 +1,62 @@
+.share-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 8px rgba(25, 25, 25, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.share-container hr {
+  width: 100%;
+}
+
+.share-wrapper {
+  width: 90%;
+  margin: 15px 0;
+}
+
+.share-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.share-input {
+  opacity: 0.47;
+}
+
+.share-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.share-bottom {
+  width: 100%;
+}
+
+.share-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.share-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.share-option-text {
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.share-icon {
+  font-size: 24px;
+}
