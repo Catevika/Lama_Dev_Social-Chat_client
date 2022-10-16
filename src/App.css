@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+:root {
+  --ultra-dark: hsl(251, 30%, 25%);
+  --dark: hsl(251, 30%, 35%);
+  --gray: hsl(251, 30%, 85%);
+  --white: hsl(251, 30%, 95%);
+  --dark-red: hsl(343, 60%, 35%);
+  --light-green: hsl(80, 51%, 50%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-track {
+  background-color: var(--gray);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: var(--gray);
+  background-color: var(--ultra-dark);
+}
+
+main {
+  height: calc(100vh - 58px);
+}
+
+hr {
+  background-color: #483e74;
+  border: none;
+  height: 1px;
+  width: 90%;
+  margin: 10px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  align-self: end;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 5px;
+  background-color: var(--light-green);
+  border: none;
+  cursor: pointer;
+}
+
+input {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 89%;
+  height: 30px;
+  padding-left: 20px;
+  border-radius: 15px;
+  background-color: var(--dark);
+  opacity: 0.7;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+input:focus-within {
+  outline: 1px solid var(--white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input::-webkit-input-placeholder {
+  color: var(--gray);
+}
+
+input::-moz-placeholder {
+  color: var(--gray);
+}
+
+input:-ms-input-placeholder {
+  color: var(--gray);
+}
+
+input::-ms-input-placeholder {
+  color: var(--gray);
+}
+
+input::placeholder {
+  color: var(--gray);
+}
+
+span {
+  background-color: var(--ultra-dark);
 }
