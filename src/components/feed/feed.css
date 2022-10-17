@@ -1,7 +1,10 @@
 .feed-container {
   flex: 7;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .feed-wrapper {
-  padding: 10px 10px 10px 40px;
+  padding: 20px;
 }
