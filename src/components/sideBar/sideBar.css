@@ -1,5 +1,6 @@
 .sideBar-container {
   flex: 3;
+  margin: 20px 0;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
@@ -28,9 +29,9 @@
   color: var(--white);
 }
 
-.sidebar-name {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+.sidebar-title {
+  align-self: start;
+  margin: 1rem 0;
 }
 
 .sidebar-friend-list {
@@ -38,17 +39,11 @@
   margin: 0;
 }
 
-@media (max-width: 1240px) {
-  .sidebar-friend-list {
-    grid-template-columns: 1fr;
-  }
-}
-
 .sidebar-friend {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .sidebar-friend-img {
