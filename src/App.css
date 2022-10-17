@@ -5,17 +5,14 @@
   --white: hsl(251, 30%, 95%);
   --dark-red: hsl(343, 60%, 35%);
   --light-green: hsl(80, 51%, 50%);
+  --yellow: hsl(43, 74%, 50%);
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 1px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: var(--gray);
-}
-
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-track-piece {
   background-color: var(--dark);
 }
 
@@ -24,11 +21,10 @@
 ::after {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 html {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   color: var(--gray);
   background-color: var(--ultra-dark);
@@ -38,12 +34,8 @@ main {
   height: calc(100vh - 58px);
 }
 
-hr {
-  background-color: #483e74;
-  border: none;
-  height: 1px;
-  width: 90%;
-  margin: 10px 0;
+b {
+  font-weight: 500;
 }
 
 ul {
@@ -53,7 +45,7 @@ ul {
 button {
   align-self: end;
   font-weight: 500;
-  padding: 7px 14px;
+  padding: 7px 10px;
   border-radius: 5px;
   background-color: var(--light-green);
   border: none;
