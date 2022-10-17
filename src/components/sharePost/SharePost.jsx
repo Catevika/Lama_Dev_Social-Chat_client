@@ -6,14 +6,13 @@ export default function SharePost() {
 		<div className='share-container'>
 			<div className='share-wrapper'>
 				<div className='share-top'>
-					<img src='/assets/person/0.png' alt='' className='share-img' />
+					<img src='/assets/person/0.jpg' alt='' className='share-img' />
 					<input
 						type='text'
 						placeholder="What's in your mind?"
 						className='share-input'
 					/>
 				</div>
-				<hr />
 				<div className='share-bottom'>
 					<div className='share-options'>
 						<div className='share-option'>

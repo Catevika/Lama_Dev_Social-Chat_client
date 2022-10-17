@@ -8,10 +8,6 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.share-container hr {
-  width: 100%;
-}
-
 .share-wrapper {
   width: 90%;
   margin: 15px 0;
@@ -21,7 +17,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
+  width: 96.5%;
+  margin-bottom: 10px;
 }
 
 .share-input {
@@ -29,8 +26,8 @@
 }
 
 .share-img {
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover;
@@ -43,7 +40,7 @@
 
 .share-options {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .share-option {
@@ -53,7 +50,7 @@
 }
 
 .share-option-text {
-  font-weight: 500;
+  font-size: 1rem;
   margin-left: 5px;
 }
 
