@@ -23,6 +23,21 @@ export const Users = [
 		id: 5,
 		profilePicture: 'assets/person/7.jpeg',
 		username: 'Sam Watts'
+	},
+	{
+		id: 6,
+		profilePicture: 'assets/person/6.jpeg',
+		username: 'Jade Drake'
+	},
+	{
+		id: 7,
+		profilePicture: 'assets/person/10.jpeg',
+		username: 'Serena Bloom'
+	},
+	{
+		id: 8,
+		profilePicture: 'assets/person/4.jpeg',
+		username: 'Jill Lovely'
 	}
 ];
 
