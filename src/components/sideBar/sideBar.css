@@ -1,8 +1,11 @@
 .sideBar-container {
   flex: 3;
-  margin: 20px 0;
+  margin: 10px 0 0;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+  height: 100vh;
 }
 
 .sidebar-wrapper {
@@ -30,7 +33,7 @@
 }
 
 .sidebar-title {
-  align-self: start;
+  align-self: flex-start;
   margin: 1rem 0;
 }
 

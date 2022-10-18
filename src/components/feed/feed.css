@@ -3,6 +3,9 @@
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+  margin-top: 50px;
 }
 
 .feed-wrapper {
