@@ -2,14 +2,17 @@
   flex: 4;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  margin: 20px 0;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+  height: 100vh;
+  margin: 70px 0;
 }
 
 .rightbar-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  height: 150vh;
 }
 
 .rightbar-birthday-container {
@@ -37,7 +40,7 @@
 }
 
 .rightbar-title {
-  align-self: start;
+  align-self: flex-start;
   margin: 1rem;
 }
 
@@ -48,7 +51,7 @@
 }
 
 .rightbar-friend {
-  align-self: start;
+  align-self: flex-start;
   margin-bottom: 16px;
 }
 
@@ -82,4 +85,67 @@
   border-radius: 50%;
   background-color: var(--light-green);
   border: 2px solid var(--dark);
+}
+
+/* PROFILE RIGHT BAR */
+.rightbar-profile-container {
+  position: fixed;
+  top: 75px;
+  padding: 0 25px 15px 20px;
+  border-radius: 5px;
+  background-color: var(--ultra-dark);
+  z-index: 75;
+}
+
+.rightbar-profile-title {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.rightbar-profile-title:nth-of-type(2) {
+  margin-top: 20px;
+}
+
+.rightbar-profile-info {
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.rightbar-info-key {
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.rightbar-profile-friends {
+  position: relative;
+}
+
+.rightbar-following {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%;
+  width: 100%;
+}
+
+.rightbar-following-contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.rightbar-following-contact-img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.rightbar-following-contact-name {
+  font-weight: 500;
 }
