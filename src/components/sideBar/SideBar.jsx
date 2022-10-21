@@ -55,7 +55,7 @@ export default function SideBar() {
 						<span className='sidebar-list-item-text'>Courses</span>
 					</li>
 				</ul>
-				<button>Show More</button>
+				<button className='sidebar-btn'>Show More</button>
 				<h4 className='sidebar-title'>
 					<b>Friends</b>
 				</h4>

@@ -1,11 +1,16 @@
 import { Chat, Notifications, Person, Search } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import './topBar.css';
 
 export default function TopBar() {
+	const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+
 	return (
 		<header className='topbar-container'>
 			<div className='topbar-left'>
-				<span className='topbar-logo'>Catevika Social</span>
+				<Link to='/home'>
+					<span className='topbar-logo'>Catevika Social</span>
+				</Link>
 			</div>
 			<div className='topbar-center'>
 				<div className='topbar-search-bar'>
@@ -35,7 +40,11 @@ export default function TopBar() {
 						<span className='topbar-icon-badge'>1</span>
 					</div>
 				</div>
-				<img src='/assets/Person/0.jpg' alt='' className='topbar-img' />
+				<img
+					src={serverPublic + 'Person/0.jpg'}
+					alt=''
+					className='topbar-img'
+				/>
 			</nav>
 		</header>
 	);

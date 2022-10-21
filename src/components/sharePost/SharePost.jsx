@@ -2,11 +2,17 @@ import { EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material';
 import './sharePost.css';
 
 export default function SharePost() {
+	const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+
 	return (
 		<div className='share-container'>
 			<div className='share-wrapper'>
 				<div className='share-top'>
-					<img src='/assets/person/0.jpg' alt='' className='share-img' />
+					<img
+						src={serverPublic + 'Person/0.jpg'}
+						alt=''
+						className='share-img'
+					/>
 					<input
 						type='text'
 						placeholder="What's in your mind?"

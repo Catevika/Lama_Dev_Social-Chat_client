@@ -3,8 +3,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-bottom: 10px;
   border-radius: 10px;
-  margin: 10px 0;
   box-shadow: 0 8px 8px rgba(25, 25, 25, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }

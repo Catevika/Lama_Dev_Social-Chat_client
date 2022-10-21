@@ -30,8 +30,18 @@ html {
   background-color: var(--ultra-dark);
 }
 
-main {
-  height: calc(100vh - 58px);
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--light-green);
+}
+
+a:focus,
+a:active,
+a:visited {
+  color: var(--gray);
 }
 
 b {
@@ -43,7 +53,7 @@ ul {
 }
 
 button {
-  align-self: end;
+  align-self: flex-end;
   font-weight: 500;
   padding: 7px 10px;
   border-radius: 5px;
@@ -85,6 +95,19 @@ input::-ms-input-placeholder {
 
 input::placeholder {
   color: var(--gray);
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"] {
+  color: var(--white);
+  font-weight: 500;
+}
+
+main {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 span {
