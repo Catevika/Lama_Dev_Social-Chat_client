@@ -90,10 +90,14 @@
   margin-bottom: 50px;
 }
 
-.login-btn,
-.login-register-btn {
+.login-btn {
   font-size: 1.2rem;
   padding: 10px 20px;
+}
+
+.loading {
+  margin-bottom: 50px;
+  cursor: not-allowed;
 }
 
 .login-forgot {
@@ -102,11 +106,19 @@
   margin-bottom: 20px;
 }
 
-.login-register-btn {
+.login-register-link,
+.register-register-link {
   display: block;
+  font-size: 1.2rem;
+  padding: 10px 20px;
   width: 60%;
-  align-self: center;
+  text-align: center;
   color: var(--light-green);
   background-color: var(--ultra-dark);
-  border: 1px solid var(--light-green)
+  border: 1px solid var(--light-green);
+}
+
+.login-register-link:visited,
+.register-register-link:visited {
+  color: var(--light-green);
 }

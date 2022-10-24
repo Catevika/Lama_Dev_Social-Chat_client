@@ -1,6 +1,23 @@
+import { useContext, useRef } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { loginCall } from '../../apiCalls';
+import { Link } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
 import './login.css';
 
 export default function Login() {
+	const email = useRef();
+	const password = useRef();
+	const { isFetching, dispatch } = useContext(AuthContext);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		loginCall(
+			{ email: email.current.value, password: password.current.value },
+			dispatch
+		);
+	};
+
 	return (
 		<div className='login-container'>
 			<div className='login-wrapper'>
@@ -13,16 +30,18 @@ export default function Login() {
 					</div>
 				</div>
 				<div className='login-right'>
-					<form className='login-form'>
+					<form className='login-form' onSubmit={handleSubmit}>
 						<div className='login-form-group'>
 							<label htmlFor='email' className='login-label'>
 								Email:
 							</label>
 							<input
+								ref={email}
 								name='email'
 								type='email'
 								autoComplete='current-email'
 								placeholder='Email'
+								required
 								className='login-input'
 							/>
 						</div>
@@ -31,19 +50,30 @@ export default function Login() {
 								Password:
 							</label>
 							<input
+								ref={password}
 								name='password'
 								type='password'
 								autoComplete='current-password'
 								placeholder='Password'
+								required
+								minLength='6'
 								className='login-input'
 							/>
 						</div>
 						<div className='login-btn-group'>
-							<button className='login-btn'>Log In</button>
+							{isFetching ? (
+								<CircularProgress className='loading' color='inherit' />
+							) : (
+								<button className='login-btn'>Log In</button>
+							)}
 							<span className='login-forgot'>Forgot password?</span>
-							<button className='login-register-btn'>
-								Create a new account
-							</button>
+							{isFetching ? (
+								<CircularProgress className='loading' color='inherit' />
+							) : (
+								<Link to='/register' className='login-register-link'>
+									Create a new account
+								</Link>
+							)}
 						</div>
 					</form>
 				</div>
