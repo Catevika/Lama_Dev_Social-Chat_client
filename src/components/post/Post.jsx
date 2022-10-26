@@ -1,58 +1,73 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
 import moment from 'moment';
 import { MoreVert } from '@mui/icons-material';
 import './post.css';
 
 export default function Post({ post }) {
-	const [user, setUser] = useState({});
+	const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+
+	const { user: currentUser } = useContext(AuthContext);
+
+	const [user, setuser] = useState({});
+
 	const [like, setLike] = useState(post.like.length);
 	const [isLiked, setIsLiked] = useState(false);
 	const [love, setLove] = useState(post.love.length);
 	const [isLoved, setIsLoved] = useState(false);
 
-	const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+	useEffect(() => {
+		setIsLiked(post.like.includes(currentUser._id));
+	}, [currentUser._id, post.like]);
+
+	useEffect(() => {
+		const fetchUser = async () => {
+			const { data } = await axios.get(`/users?userId=${post.userId}`);
+			setuser(data);
+		};
+		fetchUser();
+	}, [post.userId]);
 
 	const handleLike = () => {
+		try {
+			axios.put('/posts/' + post._id + '/like', { userId: currentUser._id });
+		} catch (error) {
+			console.log(error);
+		}
 		setLike(isLiked ? like - 1 : like + 1);
 		setIsLiked(!isLiked);
 	};
 
 	const handleLove = () => {
+		try {
+			axios.put('/posts/' + post._id + '/love', { userId: currentUser._id });
+		} catch (error) {
+			console.log(error);
+		}
 		setLove(isLoved ? love - 1 : love + 1);
 		setIsLoved(!isLoved);
 	};
-
-	useEffect(() => {
-		const fetchUser = async () => {
-			try {
-				const { data } = await axios.get(`/users?id=${post.userId}`);
-				setUser(data);
-			} catch (error) {
-				console.log({ messsage: error.message });
-			}
-		};
-		fetchUser();
-	}, [post.userId]);
 
 	return (
 		<div className='post-container'>
 			<div className='post-wrapper'>
 				<div className='post-top'>
 					<div className='post-top-left'>
-						<Link to={`/posts/profile/${user.username}`}>
+						<Link to={`/posts/profile/${user._id}`}>
 							<img
 								src={
-									serverPublic + 'Person/' + user.profilePicture ||
-									serverPublic + 'Person/defaultProfile.png'
+									post.postAuthorPicture
+										? serverPublic + 'Person/' + post.postAuthorPicture
+										: serverPublic + 'Person/defaultProfile.png'
 								}
 								alt=''
 								className='post-profile-img'
 							/>
 						</Link>
 						<div className='post-img-bottom'>
-							<span className='post-username'>{user.username}</span>
+							<span className='post-username'>{post.postAuthor}</span>
 							<span className='post-date'>
 								{moment(post.createdAt).fromNow()}
 							</span>
