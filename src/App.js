@@ -22,7 +22,7 @@ function App() {
 				element={user ? <Navigate to='/' replace={true} /> : <Register />}
 			/>
 			<Route path='/' element={user ? <Home /> : <Register />} />
-			<Route path='posts/profile/:username' element={<Profile />} />
+			<Route path='posts/profile/:profileId' element={<Profile />} />
 			<Route path='error' element={<ErrorPage />} />
 			<Route path='*' element={<NoMatch />} />
 		</Routes>
@@ -34,7 +34,7 @@ function NoMatch() {
 		<div>
 			<h2>Nothing to see here!</h2>
 			<p>
-				<Link to='/home'>Go to the home page</Link>
+				<Link to='/'>Go to the home page</Link>
 			</p>
 		</div>
 	);

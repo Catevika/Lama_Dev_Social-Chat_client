@@ -10,21 +10,21 @@ import './profile.css';
 export default function Profile() {
 	const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 	const params = useParams();
-	const username = params.username;
+	const profileId = params.profileId;
 
 	const [user, setUser] = useState({});
 
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
-				const { data } = await axios.get(`/users?username=${username}`);
+				const { data } = await axios.get(`/users?userId=${profileId}`);
 				setUser(data);
 			} catch (error) {
-				console.log({ messsage: error.message });
+				console.log(error);
 			}
 		};
 		fetchUser();
-	}, [username]);
+	}, [profileId]);
 
 	return (
 		<>
@@ -36,28 +36,30 @@ export default function Profile() {
 						<div className='profile-cover'>
 							<img
 								src={
-									serverPublic + 'Post/' + user.coverPicture ||
-									serverPublic + 'Person/defaultCover.jpg'
+									user.coverPicture
+										? serverPublic + 'Post/' + user.coverPicture
+										: serverPublic + 'Person/defaultCover.jpg'
 								}
 								alt=''
 								className='profile-cover-img'
 							/>
 							<img
 								src={
-									serverPublic + 'Person/' + user.profilePicture ||
-									serverPublic + 'Person/defaultProfile.png'
+									user.profilePicture
+										? serverPublic + 'Person/' + user.profilePicture
+										: serverPublic + 'Person/defaultProfile.png'
 								}
 								alt=''
 								className='profile-user-img'
 							/>
 						</div>
 						<div className='profile-info'>
-							<h4 className='profile-info-name'>{username}</h4>
+							<h4 className='profile-info-name'>{user.username}</h4>
 							<span className='profile-info-desc'>{user.description}</span>
 						</div>
 					</div>
 					<div className='profile-right-bottom'>
-						<Feed username={username} />
+						<Feed profileId={profileId} />
 						<RightBar user={user} />
 					</div>
 				</div>
