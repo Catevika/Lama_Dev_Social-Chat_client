@@ -1,9 +1,14 @@
-import Online from '../online/Online';
-import { Users } from '../../dummyData';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+// import { Users } from '../../dummyData';
+import FriendList from '../friendList/FriendList';
 import './rightBar.css';
+import FollowButton from '../followButton/FollowButton';
 
 export default function RightBar({ user }) {
 	const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+
+	const { user: currentUser } = useContext(AuthContext);
 
 	const HomeRightBar = () => {
 		return (
@@ -15,18 +20,29 @@ export default function RightBar({ user }) {
 						className='rightbar-birthday-img'
 					/>
 					<span className='rightbar-birthday-text'>
-						Birthday of <b>Jane Doe</b> and <b>3 other friends</b>
+						Birthday of <strong>Jane Doe</strong> and{' '}
+						<strong>3 other friends</strong>
 					</span>
 				</div>
-				<img src={serverPublic + 'ad.png'} alt='' className='rightbar-ad-img' />
-				<h4 className='rightbar-title'>
-					<b>Online Friends</b>
-				</h4>
-				<ul className='rightbar-friend-list'>
-					{Users.map((dummyUser) => (
-						<Online key={dummyUser.id} user={dummyUser} />
-					))}
-				</ul>
+				<img
+					src={serverPublic + '/Person/0.jpg'}
+					alt=''
+					className='rightbar-ad-img'
+				/>
+				<div>
+					<a
+						href='https://github.com/Catevika'
+						rel='noreferrer'
+						target='_blank'
+					>
+						Catevika on Github
+					</a>
+				</div>
+				{
+					<div className='rightbar-friend-list'>
+						<FriendList user={currentUser} />
+					</div>
+				}
 			</>
 		);
 	};
@@ -34,8 +50,9 @@ export default function RightBar({ user }) {
 	const ProfileRightBar = () => {
 		return (
 			<>
+				{user ? <FollowButton user={user} /> : null}
 				<div className='rightbar-profile-container'>
-					<h4 className='rightbar-profile-title'>User Information</h4>
+					<h4 className='rightbar-profile-title'>Information</h4>
 					<div className='rightbar-profile-info'>
 						<span className='rightbar-info-key'>City: </span>
 						<span className='rightbar-info-value'>{user.city}</span>
@@ -55,23 +72,7 @@ export default function RightBar({ user }) {
 						</span>
 					</div>
 				</div>
-				<div className='rightbar-profile-friends'>
-					<h4 className='rightbar-profile-title'>User Friends</h4>
-					<div className='rightbar-following'>
-						{Users.map((user) => (
-							<div key={user.id} className='rightbar-following-contact'>
-								<img
-									src={serverPublic + 'Person/' + user.profilePicture}
-									alt=''
-									className='rightbar-following-contact-img'
-								/>
-								<span className='rightbar-following-contact-name'>
-									{user.username}
-								</span>
-							</div>
-						))}
-					</div>
-				</div>
+				<FriendList user={user} />
 			</>
 		);
 	};
