@@ -93,14 +93,14 @@ export default function Post({ post }) {
 							className='post-bottom-left-icon'
 							onClick={handleLike}
 						/>
-						<b>{like}</b>
+						<strong>{like}</strong>
 						<img
 							src={serverPublic + 'heart.png'}
 							alt=''
 							className='post-bottom-left-icon'
 							onClick={handleLove}
 						/>
-						<b>{love}</b>
+						<strong>{love}</strong>
 					</div>
 					{/* <div className='post-bottom-right'>
 						<span className='post-comment-counter'>

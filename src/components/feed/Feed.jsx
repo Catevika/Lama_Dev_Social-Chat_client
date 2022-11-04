@@ -14,14 +14,18 @@ export default function Feed({ profileId }) {
 			const { data } = profileId
 				? await axios.get(`/posts/profile/${profileId}`)
 				: await axios.get(`/posts/timeline/${user._id}`);
-			setPosts(data);
+			setPosts(
+				data.sort((post1, post2) => {
+					return new Date(post2.createdAt) - new Date(post1.createdAt);
+				})
+			);
 		};
 		fetchPosts();
 	}, [profileId, user._id]);
 
 	return (
 		<div className='feed-container'>
-			<SharePost />
+			{!profileId || user._id === profileId ? <SharePost /> : null}
 			{posts ? (
 				<div className='feed-wrapper'>
 					{posts.map((post) => (
