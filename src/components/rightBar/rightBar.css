@@ -36,9 +36,13 @@
   width: 85%;
   border-radius: 10px;
   padding: 5px;
-  margin: 30px;
+  margin-top: 30px;
   box-shadow: 0 8px 8px rgba(25, 25, 25, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.right-ad-text {
+  margin: 10px 0 30px;
 }
 
 .rightbar-title {
@@ -133,6 +137,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 

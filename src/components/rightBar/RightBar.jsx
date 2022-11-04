@@ -29,7 +29,7 @@ export default function RightBar({ user }) {
 					alt=''
 					className='rightbar-ad-img'
 				/>
-				<div>
+				<div className='right-ad-text'>
 					<a
 						href='https://github.com/Catevika'
 						rel='noreferrer'
