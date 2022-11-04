@@ -34,9 +34,9 @@ export default function Register() {
 			<div className='register-wrapper'>
 				<div className='register-left'>
 					<div className='register-left-group'>
-						<h3 className='register-logo'>CatevikaSocial</h3>
+						<h3 className='register-logo'>Social-Chat</h3>
 						<span className='register-desc'>
-							Connect with friends and the world around you on CatevikaSocial
+							Connect with friends and the world around you on Social-Chat
 						</span>
 					</div>
 				</div>

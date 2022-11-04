@@ -12,7 +12,7 @@ export default function TopBar() {
 		<header className='topbar-container'>
 			<div className='topbar-left'>
 				<Link to='/'>
-					<span className='topbar-logo'>Catevika Social</span>
+					<span className='topbar-logo'>Social-Chat</span>
 				</Link>
 			</div>
 			<div className='topbar-center'>
@@ -24,11 +24,7 @@ export default function TopBar() {
 					/>
 				</div>
 			</div>
-			<nav className='topbar-right'>
-				<ul className='topbar-links'>
-					<li className='topbar-link'>Homepage</li>
-					<li className='topbar-link'>Timeline</li>
-				</ul>
+			<div className='topbar-right'>
 				<div className='topbar-icons'>
 					<div className='topbar-icon-item'>
 						<Person />
@@ -43,7 +39,12 @@ export default function TopBar() {
 						<span className='topbar-icon-badge'>1</span>
 					</div>
 				</div>
-				<Link to={`posts/profile/${user._id}`}>
+				<div>
+					<span>
+						<strong>{user.username}</strong>
+					</span>
+				</div>
+				<Link to={`/posts/profile/${user._id}`}>
 					<img
 						src={
 							user.profilePicture
@@ -54,7 +55,7 @@ export default function TopBar() {
 						className='topbar-img'
 					/>
 				</Link>
-			</nav>
+			</div>
 		</header>
 	);
 }

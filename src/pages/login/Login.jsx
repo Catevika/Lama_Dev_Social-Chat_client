@@ -23,9 +23,9 @@ export default function Login() {
 			<div className='login-wrapper'>
 				<div className='login-left'>
 					<div className='login-left-group'>
-						<h3 className='login-logo'>Catevika Social</h3>
+						<h3 className='login-logo'>Social-Chat</h3>
 						<span className='login-desc'>
-							Connect with friends and the world around you on Catevika Social
+							Connect with friends and the world around you on Social-Chat
 						</span>
 					</div>
 				</div>

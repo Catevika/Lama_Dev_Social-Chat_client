@@ -20,7 +20,8 @@
   font-size: 2rem;
   margin-left: 20px;
   font-weight: bold;
-  cursor: pointer;
+  color: var(--gray);
+  cursor: pointer
 }
 
 .topbar-center {
