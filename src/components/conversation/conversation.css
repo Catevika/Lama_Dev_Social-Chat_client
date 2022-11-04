@@ -1,0 +1,23 @@
+.conversation-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.conversation-container:hover {
+  border: 1px solid var(--light-green);
+  border-radius: 10px;
+}
+
+.conversation-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  margin-right: 10px;
+}

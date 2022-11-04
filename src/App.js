@@ -7,6 +7,7 @@ import Home from './pages/home/Home';
 import Profile from './pages/profile/Profile';
 import ErrorPage from './ErrorPage';
 import './app.css';
+import Messenger from './pages/messenger/Messenger';
 
 function App() {
 	const { user } = useContext(AuthContext);
@@ -23,6 +24,10 @@ function App() {
 			/>
 			<Route path='/' element={user ? <Home /> : <Register />} />
 			<Route path='posts/profile/:profileId' element={<Profile />} />
+			<Route
+				path='/messenger'
+				element={!user ? <Navigate to='/' replace={true} /> : <Messenger />}
+			/>
 			<Route path='error' element={<ErrorPage />} />
 			<Route path='*' element={<NoMatch />} />
 		</Routes>

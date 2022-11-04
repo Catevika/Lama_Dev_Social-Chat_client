@@ -1,11 +1,16 @@
 :root {
+  --ultra-night: hsl(251, 30%, 20%);
   --ultra-dark: hsl(251, 30%, 25%);
   --dark: hsl(251, 30%, 35%);
   --gray: hsl(251, 30%, 85%);
+  --gray-60: hsl(251, 30%, 85%, 0.6);
   --white: hsl(251, 30%, 95%);
   --dark-red: hsl(343, 60%, 35%);
   --light-green: hsl(80, 51%, 50%);
-  --yellow: hsl(43, 74%, 50%);
+  --aqua: hsla(179, 71%, 50%);
+  --aqua-30: hsla(179, 71%, 50%, 0.3);
+  --fire: hsl(44, 88%, 50%);
+  --fire-30: hsl(44, 88%, 50%, 0.3);
 }
 
 ::-webkit-scrollbar {
@@ -31,21 +36,25 @@ html {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+Link:hover {
   color: var(--light-green);
 }
 
 a:focus,
 a:active,
-a:visited {
+Link:focus,
+Link:active {
   color: var(--gray);
 }
 
-b {
-  font-weight: 500;
+strong {
+  color: inherit;
+  font-weight: 500
 }
 
 ul {
@@ -62,7 +71,8 @@ button {
   cursor: pointer;
 }
 
-input {
+input,
+textarea {
   display: flex;
   width: 89%;
   height: 30px;
@@ -73,33 +83,36 @@ input {
   border: none;
 }
 
-input:focus-within {
+input:focus-within,
+textarea:focus-within {
   outline: 1px solid var(--white);
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: var(--gray);
 }
 
-input::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: var(--gray);
 }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: var(--gray);
 }
 
-input::-ms-input-placeholder {
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: var(--gray);
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--gray);
 }
 
 input[type="password"],
 input[type="email"],
-input[type="text"] {
+input[type="text"],
+textarea {
   color: var(--white);
   font-weight: 500;
 }
@@ -110,8 +123,24 @@ main {
   height: max-content;
 }
 
+p {
+  color: var(--gray-60);
+}
+
 span {
-  background-color: var(--ultra-dark);
+  color: inherit;
+  background-color: var(--ultra-dark)
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2rem;
+  padding: 5px 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  color: var(--gray);
 }
 
 .error {
