@@ -27,8 +27,8 @@ export default function FriendList({ user }) {
 					<h4 className='rightbar-profile-title'>Friends</h4>
 					<div className='rightbar-following'>
 						{friends.map((friend) => (
-							<Link to={`/posts/profile/${friend._id}`}>
-								<div key={friend._id} className='rightbar-following-contact'>
+							<Link key={friend._id} to={`/posts/profile/${friend._id}`}>
+								<div className='rightbar-following-contact'>
 									<img
 										src={
 											friend.profilePicture

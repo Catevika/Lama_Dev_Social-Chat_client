@@ -17,12 +17,12 @@ export default function Messenger() {
 	const [newMessage, setNewMessage] = useState('');
 	const [arrivingMessage, setArrivingMessage] = useState(null);
 	const [onlineUsers, setOnlineUsers] = useState([]);
-	const socket = useRef(); // ws is for web socket
+	const socket = useRef();
 	const scrollRef = useRef();
 
 	useEffect(() => {
 		// Allow only one connection even if the messenger page is refreshed
-		socket.current = io('ws://localhost:8900');
+		socket.current = io('ws://localhost:8900'); // ws is for web socket
 		socket.current.on('getMessage', (data) => {
 			setArrivingMessage({
 				senderId: data.senderId,
