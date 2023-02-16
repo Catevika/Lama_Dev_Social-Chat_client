@@ -11,6 +11,9 @@
   --aqua-30: hsla(179, 71%, 50%, 0.3);
   --fire: hsl(44, 88%, 50%);
   --fire-30: hsl(44, 88%, 50%, 0.3);
+
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
 }
 
 ::-webkit-scrollbar {
@@ -88,19 +91,43 @@ textarea:focus-within {
   outline: 1px solid var(--white);
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: var(--gray);
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   color: var(--gray);
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   color: var(--gray);
 }
 
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: var(--gray);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: var(--gray);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: var(--gray);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: var(--gray);
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
   color: var(--gray);
 }
 
