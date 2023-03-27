@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# SocialMedia CLIENT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## General Information
 
-## Available Scripts
+Social app is allowing blog posts with photo download, reading of friends feeds and instant messaging with selected friends
 
-In the project directory, you can run:
+### App
 
-### `npm start`
+- [React](https://react.dev/)
+- [create-react-app](https://create-react-app.dev/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Router
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React-router-dom V6](https://reactrouter.com/en/main)
 
-### `npm test`
+### Promise based HTTP client
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Axios](https://axios-http.com/)
 
-### `npm run build`
+### NPM packages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Dates: [moment](https://momentjs.com/)
+- Icons: [mui](https://mui.com/material-ui/getting-started/overview/)
+- Emojis: [emotions](https://github.com/emotion-js/emotion/tree/main#readme)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## SocialMedia CLIENT works with an Express Server & a Socket.io instant messaging system:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### SocialMedia SERVER
 
-### `npm run eject`
+> See https://github.com/Catevika/SocialMedia_server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Server: [Express](http://expressjs.com/)
+- Database: MongoDB via [mongoose](https://www.npmjs.com/package/mongoose)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### NPM packages
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme): bcrypt is a password-hashing function
+- [cors](https://github.com/expressjs/cors#readme): cors is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options
+- [dotenv](https://github.com/motdotla/dotenv#readme): Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+- [helmet](https://helmetjs.github.io/): Helmet helps you secure your Express apps by setting various HTTP headers
+- [morgan](https://github.com/expressjs/morgan#readme): HTTP request logger middleware for node.js
+- [multer](https://github.com/expressjs/multer#readme): Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. Multer will not process any form which is not multipart
+- [path](https://nodejs.org/docs/latest/api/path.html): path is an exact copy of the NodeJS 'path' module published to the NPM registry
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### SocialMedia SOCKET
 
-## Learn More
+> See https://github.com/Catevika/SocialMedia_socket
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Socket: [socket.io](https://socket.io/)
